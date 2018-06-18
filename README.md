@@ -4,10 +4,6 @@
 
 A RESTful web service for creating companies with beneficial owners. For data storage the system is using the in-memory H2 database. The project was developed in Spring Boot.
 
-## Demo
-
--link-
-
 ## Database Schema
 
 * Company [id, name, address, city, country, email, phone, beneficialOwners]
@@ -72,7 +68,7 @@ Example Request
 
 ```
 curl --request POST \
-  --url http://localhost:8080/companies \
+  --url https://mighty-caverns-62961.herokuapp.com/companies \
   --header 'content-type: application/json' \
   --data '{
 	"name": "Company A",
@@ -101,7 +97,7 @@ Example Request
 
 ```
 curl --request GET \
-  --url http://localhost:8080/companies
+  --url https://mighty-caverns-62961.herokuapp.com/companies
 ```
 
 Example Response
@@ -154,7 +150,7 @@ Example Request
 
 ```
 curl --request GET \
-  --url http://localhost:8080/companies/11
+  --url https://mighty-caverns-62961.herokuapp.com/companies/11
 ```
 
 Example Response
@@ -184,7 +180,7 @@ Example Request
 
 ```
 curl --request PUT \
-  --url http://localhost:8080/companies/3 \
+  --url https://mighty-caverns-62961.herokuapp.com/companies/3 \
   --header 'content-type: application/json' \
   --data '{
 	"name": "Company B2",
@@ -213,7 +209,7 @@ Example Request
 
 ```
 curl --request POST \
-  --url http://localhost:8080/companies/1/beneficialOwners \
+  --url https://mighty-caverns-62961.herokuapp.com/companies/1/beneficialOwners \
   --header 'content-type: application/json' \
   --data '{
 	"beneficialOwnerIds": [
@@ -236,7 +232,7 @@ Example Request
 
 ```
 curl --request POST \
-  --url http://localhost:8080/beneficialOwners \
+  --url https://mighty-caverns-62961.herokuapp.com/beneficialOwners \
   --header 'content-type: application/json' \
   --data '{
 	"firstName": "Thorin",
@@ -255,7 +251,7 @@ Example Request
 
 ```
 curl --request GET \
-  --url http://localhost:8080/beneficialOwners
+  --url https://mighty-caverns-62961.herokuapp.com/beneficialOwners
 ```
 
 Example Response
