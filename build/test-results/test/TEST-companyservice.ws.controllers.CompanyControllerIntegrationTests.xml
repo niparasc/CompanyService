@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="companyservice.ws.controllers.CompanyControllerIntegrationTests" tests="8" skipped="0" failures="0" errors="0" timestamp="2018-06-17T21:36:51" hostname="Thrall-Laptop" time="0.576">
+  <properties/>
+  <testcase name="createCompanyValidation" classname="companyservice.ws.controllers.CompanyControllerIntegrationTests" time="0.122"/>
+  <testcase name="addBeneficialOwners" classname="companyservice.ws.controllers.CompanyControllerIntegrationTests" time="0.125"/>
+  <testcase name="getCompanies" classname="companyservice.ws.controllers.CompanyControllerIntegrationTests" time="0.06"/>
+  <testcase name="createCompany" classname="companyservice.ws.controllers.CompanyControllerIntegrationTests" time="0.079"/>
+  <testcase name="replaceCompanyValidation" classname="companyservice.ws.controllers.CompanyControllerIntegrationTests" time="0.06"/>
+  <testcase name="getCompanyNotFound" classname="companyservice.ws.controllers.CompanyControllerIntegrationTests" time="0.033"/>
+  <testcase name="replaceCompany" classname="companyservice.ws.controllers.CompanyControllerIntegrationTests" time="0.05"/>
+  <testcase name="getCompany" classname="companyservice.ws.controllers.CompanyControllerIntegrationTests" time="0.038"/>
+  <system-out><![CDATA[2018-06-18 00:36:51.231  INFO 5424 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [companyservice.ws.controllers.CompanyControllerIntegrationTests], using SpringBootContextLoader
+2018-06-18 00:36:51.233  INFO 5424 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [companyservice.ws.controllers.CompanyControllerIntegrationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2018-06-18 00:36:51.234  INFO 5424 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [companyservice.ws.controllers.CompanyControllerIntegrationTests]: CompanyControllerIntegrationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2018-06-18 00:36:51.241  INFO 5424 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration companyservice.CompanyserviceApplication for test class companyservice.ws.controllers.CompanyControllerIntegrationTests
+2018-06-18 00:36:51.245  INFO 5424 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-18 00:36:51.247  INFO 5424 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2666c5e5, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@483f6a5e, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@43b67825, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@13afe3f4, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3764589, org.springframework.test.context.transaction.TransactionalTestExecutionListener@30a8a223, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@402f8343, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@2cf368f1, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@1d982aeb, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@68543ac1, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@54dd8913, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@635ed799]
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /companies
+       Parameters = {}
+          Headers = {Content-Type=[application/json;charset=UTF-8]}
+             Body = {"id":null,"name":"Google","address":"Googleplex","city":"Mountain View","country":"USA","email":"google@google.com","phone":"777-777-7777","beneficialOwners":[]}
+    Session Attrs = {}
+
+Handler:
+             Type = companyservice.ws.controllers.CompanyController
+           Method = public org.springframework.http.ResponseEntity<java.lang.Void> companyservice.ws.controllers.CompanyController.createCompany(companyservice.ws.resources.CompanyResource)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = companyservice.ws.exceptions.ValidationException
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 400
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8]}
+     Content type = application/json;charset=UTF-8
+             Body = {"meta":{"code":1000,"error":"VALIDATION_ERROR","info":"The system cannot process the request due to validation errors"},"response":{"beneficialOwners":["At least one beneficial owner is required"]}}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /companies/8/beneficialOwners
+       Parameters = {}
+          Headers = {Content-Type=[application/json;charset=UTF-8]}
+             Body = {"beneficialOwnerIds":[10,11]}
+    Session Attrs = {}
+
+Handler:
+             Type = companyservice.ws.controllers.CompanyController
+           Method = public org.springframework.http.ResponseEntity<java.lang.Void> companyservice.ws.controllers.CompanyController.addBeneficialOwners(java.lang.Long,java.util.Map<java.lang.String, java.util.List<java.lang.Long>>)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 204
+    Error message = null
+          Headers = {}
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /companies
+       Parameters = {}
+          Headers = {}
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = companyservice.ws.controllers.CompanyController
+           Method = public org.springframework.http.ResponseEntity<java.util.List<companyservice.ws.resources.CompanyResource>> companyservice.ws.controllers.CompanyController.getCompanies()
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8]}
+     Content type = application/json;charset=UTF-8
+             Body = [{"id":12,"name":"Google","address":"Googleplex","city":"Mountain View","country":"USA","email":"google@google.com","phone":"777-777-7777","beneficialOwners":[{"id":13,"firstName":"Thorin","lastName":"Oakenshield"}]}]
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /companies
+       Parameters = {}
+          Headers = {Content-Type=[application/json;charset=UTF-8]}
+             Body = {"id":null,"name":"Google","address":"Googleplex","city":"Mountain View","country":"USA","email":"google@google.com","phone":"777-777-7777","beneficialOwners":[{"id":14,"firstName":"Thorin","lastName":"Oakenshield"}]}
+    Session Attrs = {}
+
+Handler:
+             Type = companyservice.ws.controllers.CompanyController
+           Method = public org.springframework.http.ResponseEntity<java.lang.Void> companyservice.ws.controllers.CompanyController.createCompany(companyservice.ws.resources.CompanyResource)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 204
+    Error message = null
+          Headers = {}
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = PUT
+      Request URI = /companies/16
+       Parameters = {}
+          Headers = {Content-Type=[application/json;charset=UTF-8]}
+             Body = {"id":16,"name":null,"address":"Googleplex","city":"Mountain View","country":"USA","email":"google@google.com","phone":"777-777-7777","beneficialOwners":[{"id":17,"firstName":"Thorin","lastName":"Oakenshield"}]}
+    Session Attrs = {}
+
+Handler:
+             Type = companyservice.ws.controllers.CompanyController
+           Method = public org.springframework.http.ResponseEntity<java.lang.Void> companyservice.ws.controllers.CompanyController.replaceCompany(java.lang.Long,companyservice.ws.resources.CompanyResource)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = companyservice.ws.exceptions.ValidationException
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 400
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8]}
+     Content type = application/json;charset=UTF-8
+             Body = {"meta":{"code":1000,"error":"VALIDATION_ERROR","info":"The system cannot process the request due to validation errors"},"response":{"name":["Name is required"]}}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /companies/1
+       Parameters = {}
+          Headers = {}
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = companyservice.ws.controllers.CompanyController
+           Method = public org.springframework.http.ResponseEntity<companyservice.ws.resources.CompanyResource> companyservice.ws.controllers.CompanyController.getCompany(java.lang.Long)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = companyservice.ws.exceptions.ResourceNotFoundException
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 404
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8]}
+     Content type = application/json;charset=UTF-8
+             Body = {"meta":{"info":"Could not find Company with ID 1"}}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = PUT
+      Request URI = /companies/18
+       Parameters = {}
+          Headers = {Content-Type=[application/json;charset=UTF-8]}
+             Body = {"id":18,"name":"New Name","address":"Googleplex","city":"Mountain View","country":"USA","email":"google@google.com","phone":"777-777-7777","beneficialOwners":[{"id":19,"firstName":"Thorin","lastName":"Oakenshield"}]}
+    Session Attrs = {}
+
+Handler:
+             Type = companyservice.ws.controllers.CompanyController
+           Method = public org.springframework.http.ResponseEntity<java.lang.Void> companyservice.ws.controllers.CompanyController.replaceCompany(java.lang.Long,companyservice.ws.resources.CompanyResource)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 204
+    Error message = null
+          Headers = {}
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /companies/20
+       Parameters = {}
+          Headers = {}
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = companyservice.ws.controllers.CompanyController
+           Method = public org.springframework.http.ResponseEntity<companyservice.ws.resources.CompanyResource> companyservice.ws.controllers.CompanyController.getCompany(java.lang.Long)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8]}
+     Content type = application/json;charset=UTF-8
+             Body = {"id":20,"name":"Google","address":"Googleplex","city":"Mountain View","country":"USA","email":"google@google.com","phone":"777-777-7777","beneficialOwners":[{"id":21,"firstName":"Thorin","lastName":"Oakenshield"}]}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
