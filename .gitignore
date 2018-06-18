@@ -29,3 +29,6 @@ hs_err_pid*
 .settings/org.eclipse.buildship.core.prefs
 .gradle/buildOutputCleanup/cache.properties
 .gradle/vcsWorkingDirs/gc.properties
+/.gradle/
+/build/
+/bin/
