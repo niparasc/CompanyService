@@ -4,6 +4,8 @@
 
 A RESTful web service for creating companies with beneficial owners. For data storage the system is using the in-memory H2 database. The project was developed in Spring Boot.
 
+Demo: https://company-service-front.herokuapp.com
+
 ## Database Schema
 
 * Company [id, name, address, city, country, email, phone, beneficialOwners]
